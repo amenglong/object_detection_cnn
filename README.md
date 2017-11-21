@@ -10,7 +10,7 @@ Object detection using convolutional neural networks with already trained <a hre
 <ul>
 <li>Download trained model (size >25 MB) from <a href="https://pjreddie.com/media/files/yolo-voc.weights">here</a>.</li>
 <li>Change name to "yolo.h5"</li>
-<li>Locate in /model_data/yolo.h5</li>
+<li>Deploy in /model_data folder</li>
 </ul>
 
 ### Input image
