@@ -54,7 +54,8 @@ You then select only few boxes based on:
   <ul>
   <li>Non-max suppression: Compute the Intersection over Union and avoid selecting overlapping boxes</li>
   </ul>
-  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063907-f7acfdda-cede-11e7-9405-ea01339d31cb.png" width="400"></p>
+  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33065478-ed57eef8-cee3-11e7-8c96-9a67d63debc7.png" width="400"></p>
 
 ### 4. Final output
 This gives you YOLO's final output:
+<p align="center"><img src="https://user-images.githubusercontent.com/24521991/33065240-42b8b860-cee3-11e7-9cef-b219a932d1df.png" width="500"></p>
