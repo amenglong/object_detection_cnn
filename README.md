@@ -5,7 +5,10 @@ Object detection using convolutional neural networks with already trained <a hre
 
 ### How does it work?
 <ul>
-<li>The input image goes through a CNN, resulting in a (19,19,5,85) dimensional output.</li>
+<li>The input image goes through a CNN, resulting in a (19,19,5,85) dimensional output. Run summary() to see whole framework architecture:</li>
+</ul>
+  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063083-5dbc7662-cedc-11e7-81d7-2eac598352a8.png" width="800"></p>
+<ul>
 <li>After flattening the last two dimensions, the output is a volume of shape (19, 19, 425):</li>
 <ul>
 <li>Each cell in a 19x19 grid over the input image gives 425 numbers.</li>
