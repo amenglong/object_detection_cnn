@@ -1,0 +1,2 @@
+Download trained model from: https://pjreddie.com/media/files/yolo-voc.weights
+Change name to "yolo.h5"
