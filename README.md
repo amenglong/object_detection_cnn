@@ -29,21 +29,21 @@ For each image:
 <br/>
 
 ## How does it work?
-<ul>
-<li>The input image goes through a CNN, resulting in a (19,19,5,85) dimensional output. Run summary() to see whole framework architecture:</li>
-</ul>
+
+### 1. CNN output
+The input image goes through a CNN, resulting in a (19,19,5,85) dimensional output. Run summary() to see whole framework architecture:
   <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063083-5dbc7662-cedc-11e7-81d7-2eac598352a8.png" width="800"></p>
-<ul>
-<li>After flattening the last two dimensions, the output is a volume of shape (19, 19, 425):</li>
-</ul>  
+
+### 2. Output processing
+After flattening the last two dimensions, the output is a volume of shape (19, 19, 425):  
 <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063496-9a98a834-cedd-11e7-80cd-daa62c999e54.png" width="400"></p>
-<ul>  
-  <ul>
-  <li>Each cell in a 19x19 grid over the input image gives 425 numbers.</li>
-  <li>425 = 5 x 85 because each cell contains predictions for 5 boxes, corresponding to 5 anchor boxes, as seen in lecture.</li>
-  <li>85 = 5 + 80 where 5 is because  (pc,bx,by,bh,bw)(pc,bx,by,bh,bw)  has 5 numbers, and and 80 is the number of classes we'd like to detect</li>
-  </ul>
+  
+<ul>
+<li>Each cell in a 19x19 grid over the input image gives 425 numbers.</li>
+<li>425 = 5 x 85 because each cell contains predictions for 5 boxes, corresponding to 5 anchor boxes, as seen in lecture.</li>
+<li>85 = 5 + 80 where 5 is because  (pc,bx,by,bh,bw)(pc,bx,by,bh,bw)  has 5 numbers, and and 80 is the number of classes we'd like to detect</li>
 </ul>
+
 <ul>
 <li>You then select only few boxes based on:</li>
   <ul>
