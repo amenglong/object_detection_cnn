@@ -44,21 +44,17 @@ After flattening the last two dimensions, the output is a volume of shape (19, 1
 <li>85 = 5 + 80 where 5 is because  (pc,bx,by,bh,bw)(pc,bx,by,bh,bw)  has 5 numbers, and and 80 is the number of classes we'd like to detect</li>
 </ul>
 
-<ul>
-<li>You then select only few boxes based on:</li>
+### 3. Box selection
+You then select only few boxes based on:
   <ul>
   <li>Score-thresholding: throw away boxes that have detected a class with a score less than the threshold</li>
-  </ul>  
-</ul>    
-  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063777-6e849428-cede-11e7-8aaa-545d84c92a8b.png" width="400"></p>
-<ul>
+  </ul>      
+  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063777-6e849428-cede-11e7-8aaa-545d84c92a8b.png" width="400"></p>
+
   <ul>
   <li>Non-max suppression: Compute the Intersection over Union and avoid selecting overlapping boxes</li>
   </ul>
-</ul>
+  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063907-f7acfdda-cede-11e7-9405-ea01339d31cb.png" width="400"></p>
 
-<p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063907-f7acfdda-cede-11e7-9405-ea01339d31cb.png" width="400"></p>
-
-<ul>
-<li>This gives you YOLO's final output.</li>
-</ul>
+### 4. Final output
+This gives you YOLO's final output:
