@@ -17,8 +17,16 @@ Object detection using convolutional neural networks with already trained <a hre
 For each image:
 <ul>
 <li>Update shape in car_detection_yolo.py line 96</li>
+</ul>
+
+  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33064170-c2e18c6e-cedf-11e7-8bdb-80e7ef395f7c.png" width="300"></p>
+
+<ul>
 <li>Update name in car_detection_yolo.py line 126</li>
 </ul>
+  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33064353-54f2bab0-cee0-11e7-8a59-1eb353276755.png" width="400"></p>
+
+<br/>
 
 ## How does it work?
 <ul>
