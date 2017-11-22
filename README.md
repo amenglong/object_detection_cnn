@@ -14,17 +14,19 @@ Object detection using convolutional neural networks with already trained <a hre
 </ul>
 
 ### Input image
-For each image:
+For every new image:
 <ul>
-<li>Update <b>image_shape</b> in car_detection_yolo.py line 96:</li>
+<li>Update size:</li>
   
 ```python
+# car_detection_yolo.py
 96  image_shape = (1080., 1440.) # image_shape = (Width, Height)
 ```
 
-<li>Update name in car_detection_yolo.py line 126:</li>
+<li>Update name:</li>
 
 ```python
+# car_detection_yolo.py
 126  out_scores, out_boxes, out_classes = predict(sess, "sh_taxi.jpg") # name = "sh_taxi.jpg"
 ```
 
