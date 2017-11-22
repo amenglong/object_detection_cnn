@@ -49,38 +49,40 @@ After flattening the last two dimensions, the output is a volume of shape (19, 1
 ### 3. Box selection
 You then select only few boxes based on:
   <ul>
-  <li>Score-thresholding: throw away boxes that have detected a class with a score less than the threshold</li>
-  </ul>
+  <li>Score-thresholding: throw away boxes that have detected a class with a score less than the threshold</li> 
   
-  
-```python  
-def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
-    #Filters YOLO boxes by thresholding on object and class confidence.
-        
-    # Step 1: Compute box scores
-    box_scores = box_confidence * box_class_probs
-    
-    # Step 2: Find the box_classes thanks to the max box_scores, keep track of the corresponding score
-    box_classes = K.argmax(box_scores, axis=-1)
-    box_class_scores = K.max(box_scores, axis=-1)
-    
-    # Step 3: Create a filtering mask based on "box_class_scores" by using "threshold". The mask should have the
-    # same dimension as box_class_scores, and be True for the boxes you want to keep (with probability >= threshold)
-    filtering_mask = (box_class_scores >= threshold)
-    
-    # Step 4: Apply the mask to scores, boxes and classes
-    scores = tf.boolean_mask(box_class_scores, filtering_mask)
-    boxes = tf.boolean_mask(boxes, filtering_mask)
-    classes = tf.boolean_mask(box_classes, filtering_mask)
-    
-    return scores, boxes, classes
-```
+  ```python  
+  def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
+      #Filters YOLO boxes by thresholding on object and class confidence.
 
+      # Step 1: Compute box scores
+      box_scores = box_confidence * box_class_probs
 
-  <ul>
+      # Step 2: Find the box_classes thanks to the max box_scores, keep track of the corresponding score
+      box_classes = K.argmax(box_scores, axis=-1)
+      box_class_scores = K.max(box_scores, axis=-1)
+
+      # Step 3: Create a filtering mask based on "box_class_scores" by using "threshold". The mask should have the
+      # same dimension as box_class_scores, and be True for the boxes you want to keep (with probability >= threshold)
+      filtering_mask = (box_class_scores >= threshold)
+
+      # Step 4: Apply the mask to scores, boxes and classes
+      scores = tf.boolean_mask(box_class_scores, filtering_mask)
+      boxes = tf.boolean_mask(boxes, filtering_mask)
+      classes = tf.boolean_mask(box_classes, filtering_mask)
+
+      return scores, boxes, classes
+  ```
+
   <li>Non-max suppression: Compute the Intersection over Union and avoid selecting overlapping boxes</li>
+  
+  ```python
+  def iou(box1, box2)
+  def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5)
+  ```
+  
   </ul>
-  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33065478-ed57eef8-cee3-11e7-8c96-9a67d63debc7.png" width="400"></p>
+
 
 ### 4. Final output
 This gives you YOLO's final output:
