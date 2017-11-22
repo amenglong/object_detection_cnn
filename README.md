@@ -36,7 +36,9 @@ For each image:
 
 ### 1. CNN output
 The input image goes through a CNN, resulting in a (19,19,5,85) dimensional output. Run summary() to see whole framework architecture:
-  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33063083-5dbc7662-cedc-11e7-81d7-2eac598352a8.png" width="800"></p>
+```python
+99  yolo_model.summary()
+```
 
 ### 2. Output processing
 After flattening the last two dimensions, the output is a volume of shape (19, 19, 425):    
@@ -52,26 +54,7 @@ You then select only few boxes based on:
   <li>Score-thresholding: throw away boxes that have detected a class with a score less than the threshold</li> 
   
   ```python  
-  def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
-      #Filters YOLO boxes by thresholding on object and class confidence.
-
-      # Step 1: Compute box scores
-      box_scores = box_confidence * box_class_probs
-
-      # Step 2: Find the box_classes thanks to the max box_scores, keep track of the corresponding score
-      box_classes = K.argmax(box_scores, axis=-1)
-      box_class_scores = K.max(box_scores, axis=-1)
-
-      # Step 3: Create a filtering mask based on "box_class_scores" by using "threshold". The mask should have the
-      # same dimension as box_class_scores, and be True for the boxes you want to keep (with probability >= threshold)
-      filtering_mask = (box_class_scores >= threshold)
-
-      # Step 4: Apply the mask to scores, boxes and classes
-      scores = tf.boolean_mask(box_class_scores, filtering_mask)
-      boxes = tf.boolean_mask(boxes, filtering_mask)
-      classes = tf.boolean_mask(box_classes, filtering_mask)
-
-      return scores, boxes, classes
+  def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6)
   ```
 
   <li>Non-max suppression: Compute the Intersection over Union and avoid selecting overlapping boxes</li>
