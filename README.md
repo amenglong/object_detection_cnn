@@ -37,6 +37,7 @@ For each image:
 ### 1. CNN output
 The input image goes through a CNN, resulting in a (19,19,5,85) dimensional output. Run summary() to see whole framework architecture:
 ```python
+# car_detection_yolo.py
 99  yolo_model.summary()
 ```
 
@@ -53,13 +54,15 @@ You then select only few boxes based on:
   <ul>
   <li>Score-thresholding: throw away boxes that have detected a class with a score less than the threshold</li> 
   
-  ```python  
+  ```python
+  # car_detection_yolo.py
   def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6)
   ```
 
   <li>Non-max suppression: Compute the Intersection over Union and avoid selecting overlapping boxes</li>
   
   ```python
+  # car_detection_yolo.py
   def iou(box1, box2)
   def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5)
   ```
