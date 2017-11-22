@@ -19,15 +19,16 @@ For each image:
 <li>Update <b>image_shape</b> in car_detection_yolo.py line 96:</li>
   
 ```python
-96  image_shape = (1080., 1440.) #image_shape (Width, Height)
+96  image_shape = (1080., 1440.) # image_shape = (Width, Height)
+```
+
+<li>Update name in car_detection_yolo.py line 126:</li>
+
+```python
+126  out_scores, out_boxes, out_classes = predict(sess, "sh_taxi.jpg") # name = "sh_taxi.jpg"
 ```
 
 </ul>
-
-<ul>
-<li>Update name in car_detection_yolo.py line 126</li>
-</ul>
-  <p align="center"><img src="https://user-images.githubusercontent.com/24521991/33064353-54f2bab0-cee0-11e7-8a59-1eb353276755.png" width="400"></p>
 
 <br/>
 
