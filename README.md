@@ -9,7 +9,7 @@ Object detection using convolutional neural networks with already trained <a hre
 ### Trained model
 <ul>
 <li>Download trained model (195 MB) from <a href="https://onedrive.live.com/download?cid=B667AF4A4E4BA251&resid=B667AF4A4E4BA251!41299&authkey=APOOotsS6Hskc_o">here</a>.</li>
-<li>Save it in /model_data folder</li>
+<li>Save it in <b>/model_data</b> folder</li>
 </ul>
 
 ### Input image
