@@ -20,7 +20,7 @@ For every new image:
   
 ```python
 # car_detection_yolo.py
-96  image_shape = (1080., 1440.) # image_shape = (Width, Height)
+96  image_shape = (1080., 1440.) # image_shape = (Height, Width)
 ```
 
 <li>Update name:</li>
