@@ -8,9 +8,8 @@ Object detection using convolutional neural networks with already trained <a hre
 
 ### Trained model
 <ul>
-<li>Download trained model (size >25 MB) from <a href="https://pjreddie.com/media/files/yolo-voc.weights">here</a>.</li>
-<li>Change name to "yolo.h5"</li>
-<li>Deploy in /model_data folder</li>
+<li>Download trained model (195 MB) from <a href="https://onedrive.live.com/download?cid=B667AF4A4E4BA251&resid=B667AF4A4E4BA251!41299&authkey=APOOotsS6Hskc_o">here</a>.</li>
+<li>Save it in /model_data folder</li>
 </ul>
 
 ### Input image
